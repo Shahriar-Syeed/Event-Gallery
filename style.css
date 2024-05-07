@@ -1,0 +1,263 @@
+*{
+  box-sizing: border-box;
+}
+.gallery{
+  
+      display: grid;
+        /* grid-template-columns: repeat(4, 1fr); */
+        /* grid-template-rows: auto; */
+        /* Change the height as needed */
+        grid-template-areas: "a b b c"
+                             "a b b c"
+                             "a b b c"
+                             "d b b e"
+                             "d f g e"
+                             "d f g e";
+        gap: 2rem;
+        /* align-items: end; */
+        grid-auto-flow:row dense;
+    
+}
+ .gallery > :nth-child(1){
+  grid-area: a;
+  
+ }
+ .gallery > :nth-child(2){
+  grid-area: b;
+ }
+ .gallery > :nth-child(3){
+  grid-area: c;
+ }
+ .gallery > :nth-child(4){
+  grid-area: d;
+ }
+ .gallery > :nth-child(5){
+  grid-area: e;
+ }
+ .gallery > :nth-child(6){
+  grid-area: f;
+ }
+ .gallery > :nth-child(7){
+  grid-area: g;
+ }
+ .box-img{
+  perspective: 870px;
+ }
+ 
+
+/* .gallery > :nth-child(1),
+.gallery > :nth-child(3),
+.gallery > :nth-child(4),
+.gallery > :nth-child(7){
+  background: blue;
+  grid-row:span 3;
+  
+}
+.gallery> :nth-child(4),
+.gallery> :nth-child(7) {
+  background: blue;
+  grid-row:  span 3;
+}
+
+.gallery > :nth-child(2){
+  grid-column: span 2;
+  background: red;
+  grid-row:  span 4;
+  flex-shrink: 1;
+  
+}
+.gallery > :nth-child(5),
+.gallery > :nth-child(6){
+  grid-row: span 2;
+  background: purple;
+
+} */
+/* .gallery > :nth-child(5),
+.gallery > :nth-child(6){
+  margin-top: 10px;
+} */
+
+
+.rectangle {
+  position: absolute;
+  inset: 0;
+  transform: rotate3d(1, 0, 0, 90deg) scale(0.5);
+ 
+  text-align: center;
+  background-image: linear-gradient(to right, #F24617 0%, #FD8900 100%);
+  border-radius: inherit;
+  perspective: 23rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+i{
+  color:#2A07F9;
+  font-size: 20px;
+  font-weight: 900;
+  cursor: inherit;
+}
+.icon-btn{
+  background: white;
+  border-radius: 99px;
+  width:56px;
+  height: 56px;
+  line-height: 54px;
+  cursor: inherit;
+}
+
+/* Entry point classes */
+.in-top .gallery-card .box-img .rectangle {
+  
+  transform-origin: 50% 0%;
+  animation: in-top 500ms ease 0ms 1 forwards;
+}
+
+.in-bottom .gallery-card .box-img .rectangle {
+  
+  transform-origin: 0% 100%;
+  animation: in-bottom 500ms ease 0ms 1 forwards;
+}
+
+.in-left .gallery-card .box-img .rectangle {
+  
+  transform-origin: 0% 0%;
+  animation: in-left 500ms ease 0ms 1 forwards;
+}
+
+.in-right .gallery-card .box-img .rectangle {
+  
+  transform-origin: 100% 0%;
+  
+  animation: in-right 500ms ease 0ms 1 forwards;
+}
+
+/* Exit point classes */
+.out-top .gallery-card .box-img .rectangle {
+ 
+  transform-origin: 50% 0%;
+  animation: out-top 500ms ease 0ms 1 forwards;
+}
+
+.out-bottom .gallery-card .box-img .rectangle {
+ 
+  transform-origin: 0% 100%;
+  animation: out-bottom 500ms ease 0ms 1 forwards;
+}
+
+.out-left .gallery-card .box-img .rectangle {
+
+  transform-origin: 0% 0%;
+  animation: out-left 500ms ease 0ms 1 forwards;
+}
+
+.out-right .gallery-card .box-img .rectangle {
+ 
+  transform-origin: 100% 0%;;
+  animation: out-right 500ms ease 0ms 1 forwards;
+}
+
+@keyframes in-top {
+  from {
+    -webkit-transform: rotate3d(-1, 0, 0, 90deg);
+    transform: rotate3d(-1, 0, 0, 90deg)
+  }
+
+  to {
+    -webkit-transform: rotate3d(0, 0, 0, 0deg);
+    transform: rotate3d(0, 0, 0, 0deg)
+  }
+}
+
+@keyframes in-right {
+  from {
+    -webkit-transform: rotate3d(0, -1, 0, 90deg);
+    transform: rotate3d(0, -1, 0, 90deg)
+  }
+
+  to {
+    -webkit-transform: rotate3d(0, 0, 0, 0deg);
+    transform: rotate3d(0, 0, 0, 0deg)
+  }
+}
+
+@keyframes in-bottom {
+  from {
+    -webkit-transform: rotate3d(1, 0, 0, 90deg);
+    transform: rotate3d(1, 0, 0, 90deg)
+  }
+
+  to {
+    -webkit-transform: rotate3d(0, 0, 0, 0deg);
+    transform: rotate3d(0, 0, 0, 0deg)
+  }
+}
+
+@keyframes in-left {
+  from {
+    -webkit-transform: rotate3d(0, 1, 0, 90deg);
+    transform: rotate3d(0, 1, 0, 90deg)
+  }
+
+  to {
+    -webkit-transform: rotate3d(0, 0, 0, 0deg);
+    transform: rotate3d(0, 0, 0, 0deg)
+  }
+}
+
+@keyframes out-top {
+  from {
+    -webkit-transform: rotate3d(0, 0, 0, 0deg);
+    transform: rotate3d(0, 0, 0, 0deg)
+  }
+
+  to {
+    -webkit-transform: rotate3d(-1, 0, 0, 110deg);
+    transform: rotate3d(-1, 0, 0, 110deg)
+  }
+}
+
+@keyframes out-bottom {
+  from {
+    -webkit-transform: rotate3d(0, 0, 0, 0deg);
+    transform: rotate3d(0, 0, 0, 0deg)
+  }
+
+  to {
+    -webkit-transform: rotate3d(1, 0, 0, 110deg);
+    transform: rotate3d(1, 0, 0, 110deg)
+  }
+}
+
+@keyframes out-left {
+  from {
+    -webkit-transform: rotate3d(0, 0, 0, 0deg);
+    transform: rotate3d(0, 0, 0, 0deg)
+  }
+
+  to {
+    -webkit-transform: rotate3d(0, 1, 0, 110deg);
+    transform: rotate3d(0, 1, 0, 110deg)
+  }
+}
+
+@keyframes out-right {
+  from {
+    
+    -webkit-transform: rotate3d(0, 0, 0, 0deg);
+    transform: rotate3d(0, 0, 0, 0deg)
+  }
+
+  to {
+    -webkit-transform: rotate3d(0, -1, 0, 110deg);
+    transform: rotate3d(0, -1, 0, 110deg)
+  }
+}
+
+.gallery-card img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  /* Ensure images fit within the grid item */
+}
